@@ -4,9 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Courses</title>
+    <style>
+        body {
+            font-family: monospace, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #course-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #course-list li {
+            margin-top: 10px;
+        }
+
+        li {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
+    <nav>
+        <ul>
+            <li><a href="./">Hem</a></li>
+            <li><a href="./about">Om oss</a></li>
+            <li><a href="./courses">Kurser</a></li>
+            <li><a href="./contact">Kontakt</a></li>
+        </ul>
+    </nav>
     <h1>Kurser</h1>
     <ul id="course-list"></ul>
 
@@ -20,7 +81,7 @@
                 // Loop through the courses and create list items
                 courses.forEach(course => {
                     const listItem = document.createElement('li');
-                    listItem.textContent = course; // Replace with the appropriate property for the course name in your database
+                    listItem.textContent = `${course.title}: ${course.description}` // Replace with the appropriate property for the course name in your database
                     courseList.appendChild(listItem);
                 });
             })

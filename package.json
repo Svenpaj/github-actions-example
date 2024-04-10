@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "newman:run": "newman run postman_collection.json"
+    "api-test": "newman run ./api-tests/newtonTests.postman_collection.json"
   },
 
   "author": "",
