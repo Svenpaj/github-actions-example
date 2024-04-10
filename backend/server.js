@@ -7,10 +7,33 @@ import openDB from '../backend/database.js';
 const app = express();
 const port = 3000;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello Newton!');
+    res.sendFile(join(__dirname, '../frontend/index.html'));
+}
+);
+
+app.get('/about', (req, res) => {
+    res.sendFile(join(__dirname, '../frontend/about.html'));
+}
+);
+
+app.get('/contact', (req, res) => {
+    res.sendFile(join(__dirname, '../frontend/contact.html'));
+}
+);
+
+app.get('/courses', (req, res) => {
+    res.sendFile(join(__dirname, '../frontend/courses.html'));
+}
+);
+
+app.get('/api', (req, res) => {
+    res.send('API is working');
 }
 );
 
@@ -92,6 +115,7 @@ app.delete('/api/courses/:id', async (req, res) => {
     res.json({ id });
 });
 
+express.static(join(__dirname, '../frontend'));
 
 app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
