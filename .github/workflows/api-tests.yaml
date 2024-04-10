@@ -12,6 +12,7 @@ on:
 jobs:
   # build, the name of the job, a server to create and auto configure
   build:
+    name: api-test
     # on github actions this comes with MySQL 8.0 :)
     runs-on: ubuntu-latest
 
