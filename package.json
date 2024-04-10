@@ -1,0 +1,24 @@
+{
+  "name": "github-actions-example",
+  "version": "1.0.0",
+  "description": "An example with API and UI (cypress) tests running auto when push requests are made",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "newman:run": "newman run postman_collection.json"
+  },
+
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.7.2",
+    "express": "^4.19.2",
+    "newman": "^6.1.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
