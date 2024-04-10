@@ -43,7 +43,7 @@ jobs:
      # - run: npm run seed-db
         # start the backend / rest-api-server
         # (without blocking the terminal - nohup)
-      - run: nohup npm run backend &
+      - run: nohup npm run start &
         # run whatever is specified in package.json
         # for the script test
       - run: npm run api-test
