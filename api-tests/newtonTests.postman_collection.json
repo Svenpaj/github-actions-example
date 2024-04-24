@@ -112,10 +112,6 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"E-post:\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Body matches string\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"Kontakt\");\r",
 							"});\r",
 							""
