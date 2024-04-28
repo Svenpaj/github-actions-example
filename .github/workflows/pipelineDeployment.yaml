@@ -24,18 +24,19 @@ jobs:
       - name: Run API tests
         run: npm run api-test
 
-  # cypress_tests:
-  #   needs: api_tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Cypress run
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         start: npm start
-  #         wait-on: 'http://localhost:3000'
-  #         wait-on-timeout: 300
+  cypress_tests:
+    needs: api_tests
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
+       - name: Cypress run
+         uses: cypress-io/github-action@v2
+         with:
+           start: npm start
+           wait-on: 'http://localhost:3000'
+           wait-on-timeout: 300
 
+  # Deploy to server using SCP
   # deployment:
   # needs: [api_tests, cypress_tests]
   # if: success()
@@ -47,8 +48,33 @@ jobs:
   #   - name: Deploy to Server via SCP
   #     uses: appleboy/scp-action@v0.1.4
   #     with:
-  #       host: ${{ secrets.HOST }}
-  #       username: ${{ secrets.USER }}
-  #       key: ${{ secrets.SSH_KEY }}
-  #       source: "*.*"
-  #       target: "/var/www/github-actions-example/"
+  #      host: ${{ secrets.HOST }}
+  #      username: ${{ secrets.USERNAME }}
+  #      password: ${{ secrets.PASSWORD }}
+  #      port: ${{ secrets.PORT }}
+  #      source: '*.*'
+  #      target: "/var/www/github-actions-example/"
+
+
+
+  # Deploy to server using SSH
+  #deploy:
+  #  needs: [tests]
+  #  environment: "Main deploy"
+  #
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: executing remote ssh commands using password
+  #      uses: appleboy/ssh-action@v0.1.10
+  #      with:
+  #        host: ${{ secrets.HOST }}
+  #        username: ${{ secrets.USERNAME }}
+  #        password: ${{ secrets.PASSWORD }}
+  #        port: ${{ secrets.PORT }}
+  #        script: |
+  #          cd /var/www/Cypress-cucumber
+  #          git pull
+  #          npm install
+  #          npm run build --if-present
+  #          #pm2 restart "pm2 project name"
+  #          pm2 restart reverse-proxy
