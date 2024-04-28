@@ -28,6 +28,7 @@ jobs:
     needs: api_tests
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
@@ -38,7 +39,7 @@ jobs:
         run: nohup npm run start &
       - name: Install dependencies
         run: cd cypress && npm ci
-      - uses: actions/checkout@v2
+      
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
