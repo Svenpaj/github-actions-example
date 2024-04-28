@@ -19,8 +19,9 @@ jobs:
         run: npm install -g newman
       - name: Install dependencies
         run: npm ci
-      - name: Run Newman tests
+      - name: Start the server
         run: nohup npm run start &
+      - name: Run API tests
         run: npm run api-test
 
   # cypress_tests:
