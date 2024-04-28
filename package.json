@@ -11,11 +11,10 @@
     "cypress:run": "cypress run",
     "api-test": "newman run ./api-tests/newtonTests.postman_collection.json"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.7.2",
+    "cypress": "^13.8.1",
     "express": "^4.19.2",
     "newman": "^6.1.2",
     "sqlite": "^5.1.1",
