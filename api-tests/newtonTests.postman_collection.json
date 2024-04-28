@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "cbd9b15e-125c-424b-876a-5000782bdb54",
-		"name": "newtonTests",
+		"name": "HakTests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24654178"
 	},
@@ -18,7 +18,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Newton Systemutveckling\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"HAK Systemutveckling\");\r",
 							"});\r",
 							"\r",
 							""
@@ -69,7 +69,7 @@
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Om Newton Systemutveckling\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Om HAK Systemutveckling\");\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Body matches string\", function () {\r",
