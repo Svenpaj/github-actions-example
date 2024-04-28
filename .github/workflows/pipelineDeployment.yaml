@@ -32,8 +32,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-           start: nohup npm run start &
-           start: cd cypress && npm run test
+           start: nohup npm run start && cd cypress/ && npm run test
            wait-on: 'http://localhost:3000'
            wait-on-timeout: 300
 
