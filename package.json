@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node ./backend/server.js",
     "api-test": "newman run ./api-tests/newtonTests.postman_collection.json",
-    "cy-test-ui": "cypress open --browser chrome",
-    "cy-test": "cypress run --browser chrome",
+    "cy-test-ui": "cd ./cypress && cypress open --browser chrome",
+    "cy-test": "cd ./cypress && cypress run --browser chrome",
     "make-steps": "node ./cypress/_auto-generate-step-definitions.js"
   },
   "author": "",
