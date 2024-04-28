@@ -1,4 +1,4 @@
-Feature: Read the paper
+Feature: Testing the first page
 
-    Scenario: See the image on the first page
+    Scenario: Go to the first page
         Given that I am on the first page
