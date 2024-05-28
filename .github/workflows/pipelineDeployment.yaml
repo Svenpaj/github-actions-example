@@ -22,8 +22,11 @@ jobs:
         run: npm ci 
       - name: Start the server
         run: nohup npm run start &
+      - name: check absolut path
+        run: pwd
       - name: Run API tests
         run: npm run api-test
+
 
   cypress_tests:
     needs: api_tests
