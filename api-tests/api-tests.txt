@@ -55,7 +55,7 @@ jobs:
 
 
       deploy:
-  
+   needs: cypress_tests
    runs-on: ubuntu-latest
    steps:
      - name: executing remote ssh commands using password
