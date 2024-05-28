@@ -4,7 +4,7 @@ import { open } from 'sqlite';
 // Open a database connection
 async function openDB() {
     return open({
-        filename: './github-actions-example/backend/database/newtonDB.sqlite',
+        filename: '/github-actions-example/backend/database/newtonDB.sqlite',
         driver: sqlite3.Database
     });
 }
