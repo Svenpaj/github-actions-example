@@ -6,10 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node ./backend/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "api-test": "newman run ./api-tests/newtonTests.postman_collection.json"
+    "api-test": "newman run ./api-tests/newtonTests.postman_collection.json",
+    "cy-test-ui": "cd ./cypress && cypress open --browser chrome",
+    "cy-test": "cd ./cypress && cypress run --browser chrome",
+    "make-steps": "node ./cypress/_auto-generate-step-definitions.js"
   },
   "author": "",
   "license": "ISC",
