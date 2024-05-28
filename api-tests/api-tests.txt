@@ -50,3 +50,25 @@ jobs:
         # run whatever is specified in package.json
         # for the script test
       - run: npm run api-test
+
+
+
+
+      deploy:
+  
+   runs-on: ubuntu-latest
+   steps:
+     - name: executing remote ssh commands using password
+       uses: appleboy/ssh-action@v0.1.10
+       with:
+         host: ${{ secrets.HOST }}
+         username: ${{ secrets.USERNAME }}
+         password: ${{ secrets.PASSWORD }}
+         port: ${{ secrets.PORT }}
+         script: |
+           cd /var/www/Cypress-cucumber
+           git pull
+           npm install
+           npm run build --if-present
+           pm2 restart "pm2 project name"
+           pm2 restart reverse-proxy
